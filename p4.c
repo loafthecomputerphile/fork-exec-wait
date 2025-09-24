@@ -8,7 +8,7 @@ int main() {
         // Example: execl
         execl("/bin/ls", "ls", "-l", NULL);
 
-        // other variants:
+        // other ones
         // execlp("ls", "ls", "-l", NULL);
         // execv("/bin/ls", (char*[]){"ls", "-l", NULL});
         // execvp("ls", (char*[]){"ls", "-l", NULL});
