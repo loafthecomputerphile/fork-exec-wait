@@ -137,7 +137,7 @@ int main() {
 
 4. Write a program that calls `fork()` and then calls some form of `exec()` to run the program `/bin/ls`. See if you can try all of the variants of `exec()`, including (on Linux) `execl()`, `execle()`, `execlp()`, `execv()`, `execvp()`, and `execvpe()`. Why do you think there are so many variants of the same basic call?
 
-some can only take certain types of data like arrays or lists, some can modify environment variables and some also need  explicit paths
+some can only take certain types of data like arrays (v) or lists (l), some can modify environment variables (e) and some also need  explicit paths (p)
 
 ```cpp
 #include <stdio.h>
@@ -147,10 +147,9 @@ int main() {
     pid_t pid = fork();
 
     if (pid == 0) {
-        // Example: execl
         execl("/bin/ls", "ls", "-l", NULL);
 
-        // You can try others by replacing:
+        // other ones
         // execlp("ls", "ls", "-l", NULL);
         // execv("/bin/ls", (char*[]){"ls", "-l", NULL});
         // execvp("ls", (char*[]){"ls", "-l", NULL});
